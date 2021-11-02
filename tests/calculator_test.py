@@ -1,5 +1,4 @@
 """Testing the Calculator"""
-import pytest
 
 from calculator.main import Calculator
 
@@ -38,6 +37,3 @@ def test_calculator_divide():
     result  = calc.divide_numbers(10,2)
     assert result == 5
     assert calc.divide_numbers(2,0) == "Divide by Zero Error"
-
-
-
