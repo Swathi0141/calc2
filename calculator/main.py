@@ -23,6 +23,6 @@ class Calculator:
         """ divide two numbers and store the result"""
         try:
             self.result = value_a / value_b
-            return self.result
         except ZeroDivisionError:
-            return "Divide by Zero Error"
+            self.result= "Divide by Zero Error"
+        return self.result
