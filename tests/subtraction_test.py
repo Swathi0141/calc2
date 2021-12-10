@@ -1,11 +1,24 @@
-"""Testing Subtraction"""
+"""Testing Addition"""
+import os
+import pandas as pd
+from calc import log
+
+
 from calc.calculations.subtraction import Subtraction
 
-def test_calculation_subtraction():
-    """testing that our calculator has a static method for subtraction"""
+BASE_DIR = os.path.dirname(os.path.realpath(__file__)) # Get Current Working Directory
+
+#pylint: disable=unsubscriptable-object
+def test_calculation_addition():
+    """testing that our calculator has a static method for addition"""
     #Arrange
-    mynumbers = (10.0,5.0,2.5)
-    subtraction = Subtraction(mynumbers)
-    #Act
-    #Assert
-    assert subtraction.get_result() == -17.5
+    filename = "Input Files/subtraction.csv"
+    path = os.path.join(BASE_DIR,filename)
+    data_frame = pd.read_csv(path)
+    for index, row in data_frame.iterrows():
+        values = (row.value1, row.value2)
+        record_num = index
+        subtraction= Subtraction.create(values)
+        subtraction_result = data_frame["result"][index]
+        log.save_data(filename, row.value1, "-", row.value2, subtraction_result,record_num)
+        assert subtraction.get_result() == subtraction_result

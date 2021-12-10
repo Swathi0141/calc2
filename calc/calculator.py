@@ -1,33 +1,39 @@
 """ This is the increment function"""
 from calc.calculations.addition import Addition
-from calc.calculations.subtraction import Subtraction
-from calc.calculations.multiplication import Multiplication
-from calc.history.calculations import Calculations
 from calc.calculations.division import Division
+from calc.calculations.multiplication import Multiplication
+from calc.calculations.subtraction import Subtraction
+
+from calc.history.calculations import Calculations
+
 
 class Calculator:
     """ This is the Calculator class"""
     @staticmethod
-    def add_numbers(*args):
+    def get_last_calculation_from_result():
+        """ Last value from calculation"""
+        return Calculations.get_last_calculation_result()
+
+    @staticmethod
+    def add_numbers(values: tuple):
         """ adds list of numbers"""
-        calculation = Addition(args)
-        Calculations.add_calculation(calculation)
-        return calculation.get_result()
+        Calculations.add_calculation_to_history(Addition.create(values))
+        return True
+
     @staticmethod
-    def subtract_numbers(*args):
-        """ subtract a list of numbers from result"""
-        calculation = Subtraction(args)
-        Calculations.add_calculation(calculation)
-        return calculation.get_result()
+    def subtract_numbers(values: tuple):
+        """ adds list of numbers"""
+        Calculations.add_calculation_to_history(Subtraction.create(values))
+        return True
+
     @staticmethod
-    def multiply_numbers(*args):
-        """ multiplication number from result"""
-        calculation = Multiplication(args)
-        Calculations.add_calculation(calculation)
-        return calculation.get_result()
+    def multiply_numbers(values: tuple):
+        """ adds list of numbers"""
+        Calculations.add_calculation_to_history(Multiplication.create(values))
+        return True
+
     @staticmethod
-    def divide_numbers(*args):
-        """ Division number from result"""
-        calculation = Division(args)
-        Calculations.add_calculation(calculation)
-        return calculation.get_result()
+    def divide_numbers(values: tuple):
+        """ adds list of numbers"""
+        Calculations.add_calculation_to_history(Division.create(values))
+        return True
