@@ -1,9 +1,7 @@
-"""Testing Addition"""
+"""Testing Subtraction"""
 import os
 import pandas as pd
 from calc import log
-
-
 from calc.calculations.subtraction import Subtraction
 
 BASE_DIR = os.path.dirname(os.path.realpath(__file__)) # Get Current Working Directory
