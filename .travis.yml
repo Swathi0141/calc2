@@ -10,7 +10,4 @@ script:
 branches:
   only:
     - main
-    - calc_part2
-    - CSV_File_Handling
-    - refactor-assignment
     - development
