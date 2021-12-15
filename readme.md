@@ -15,7 +15,7 @@ setup.py is a config file for pytest
 
 
 
-## My Calculator page image <img alt="calculator_page" src="https://user-images.githubusercontent.com/144877930-492c3686-0b6b-4d6d-86a1-f721956c325e.png" width="1438"/>
+## My Calculator page image <img alt="calculator_page" src="https://user-images.githubusercontent.com/85901992/144877930-492c3686-0b6b-4d6d-86a1-f721956c325e.png" width="1438"/>
 
 ## Flash message when no values are entered <img width="1440" alt="Both_empty_values" src="https://user-images.githubusercontent.com/85901992/144878418-aa6ed8db-4b18-4db3-a7ff-afff68a137ac.png">
 
